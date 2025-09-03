@@ -9,5 +9,13 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './tests/setupTests.js',
     css: true,
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html', 'lcov'],
+    },
+    reporters: ['default', 'junit'],
+    outputFile: {
+      junit: 'junit.xml',
+    },
   },
 })
