@@ -1,0 +1,77 @@
+// Define a task named 'runCommand'
+// This task can be executed from the command line using `./gradlew runCommand`
+tasks.register('build', Exec) {
+    // Get the name of the operating system
+    def osName = System.getProperty('os.name').toLowerCase()
+
+    if (osName.contains('windows')) {
+        // Command for Windows
+        commandLine 'cmd', '/c', 'npm run build'
+    } else {
+        // Command for other operating systems (e.g., Linux, macOS)
+        commandLine 'sh', '-c', 'npm run build'
+    }
+
+    // You can also specify the working directory for the command
+    // workingDir './'
+
+    // To capture standard output and standard error
+    // standardOutput = new ByteArrayOutputStream()
+    // errorOutput = new ByteArrayOutputStream()
+    // ignoreExitValue true
+}
+
+tasks.register('test', Exec) {
+    // Get the name of the operating system
+    def osName = System.getProperty('os.name').toLowerCase()
+
+    if (osName.contains('windows')) {
+        // Command for Windows
+        commandLine 'cmd', '/c', 'npm run test'
+    } else {
+        // Command for other operating systems (e.g., Linux, macOS)
+        commandLine 'sh', '-c', 'npm run test'
+    }
+
+    // You can also specify the working directory for the command
+    // workingDir './'
+
+    // To capture standard output and standard error
+    // standardOutput = new ByteArrayOutputStream()
+    // errorOutput = new ByteArrayOutputStream()
+    // ignoreExitValue true
+}
+
+// Make the 'build' task depend on the 'runCommand' task.
+// This means that every time you run `./gradlew build`, the 'runCommand'
+// task will be executed first.
+
+tasks.named('build') {
+    dependsOn 'coverage'
+}
+
+
+tasks.register('coverage', Exec) {
+    // Get the name of the operating system
+    def osName = System.getProperty('os.name').toLowerCase()
+
+    if (osName.contains('windows')) {
+        // Command for Windows
+        commandLine 'cmd', '/c', 'npm run test:coverage'
+    } else {
+        // Command for other operating systems (e.g., Linux, macOS)
+        commandLine 'sh', '-c', 'npm run test:coverage'
+    }
+
+    // You can also specify the working directory for the command
+    // workingDir './'
+
+    // To capture standard output and standard error
+    // standardOutput = new ByteArrayOutputStream()
+    // errorOutput = new ByteArrayOutputStream()
+    // ignoreExitValue true
+}
+
+tasks.named('coverage') {
+    dependsOn 'test'
+}

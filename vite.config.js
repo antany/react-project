@@ -12,6 +12,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
+      exclude: ['src/main.jsx', 'tests/setupTests.js','vite.config.js','eslint.config.js','coverage','dist','.scannerwork','tests'],
     },
     reporters: ['default', 'junit'],
     outputFile: {

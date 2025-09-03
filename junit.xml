@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="1" failures="0" errors="0" time="2.324">
-    <testsuite name="tests/App.test.jsx" timestamp="2025-09-03T00:55:03.492Z" hostname="antpc" tests="1" failures="0" errors="0" skipped="0" time="0.0370592">
-        <testcase classname="tests/App.test.jsx" name="App &gt; renders HelloWorld" time="0.0350176">
+<testsuites name="vitest tests" tests="1" failures="0" errors="0" time="2.269">
+    <testsuite name="tests/App.test.jsx" timestamp="2025-09-03T02:06:25.770Z" hostname="antpc" tests="1" failures="0" errors="0" skipped="0" time="0.0299542">
+        <testcase classname="tests/App.test.jsx" name="App &gt; renders HelloWorld" time="0.0278228">
         </testcase>
     </testsuite>
 </testsuites>

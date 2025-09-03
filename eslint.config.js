@@ -28,7 +28,7 @@ export default defineConfig([
     },
   },
   {
-    files: ['tests/**/*.{js,jsx}'],
+    files: ['**/*.test.{js,jsx}'],
     plugins: {
       vitest,
     },

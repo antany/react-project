@@ -24,3 +24,12 @@ junit.xml
 *.njsproj
 *.sln
 *.sw?
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+coverage
+.scannerwork
+.gradle
