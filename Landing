@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TD App Portal</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import for a clean, modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom TD Bank green color */
+        .bg-td-green {
+            background-color: #00824b;
+        }
+        .text-td-green {
+            color: #00824b;
+        }
+        /* Custom TD Bank lighter green for hover effects */
+        .hover\:bg-td-light-green:hover {
+            background-color: #21a366;
+        }
+        /* Style for the button background image, a subtle pattern to match the TD brand */
+        .app-button {
+            background-image: radial-gradient(circle at 100% 100%, #157945, #00824b);
+            transition: all 0.3s ease-in-out;
+        }
+        .app-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 130, 75, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main container with a card-like material design -->
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-4xl p-8 md:p-12">
+
+        <!-- Header section -->
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Welcome to the TD App Portal</h1>
+            <p class="text-gray-500 text-lg">Select an application below to continue to login.</p>
+        </header>
+
+        <!-- Main content area with a responsive grid layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- App Card 1: Online Banking -->
+            <div class="flex flex-col items-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-td-green mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                    <path d="M12 21v-14"></path>
+                    <path d="M7 16h10"></path>
+                    <path d="M7 12h10"></path>
+                    <path d="M7 8h10"></path>
+                </svg>
+                <h2 class="text-xl font-semibold mb-2 text-gray-700">Online Banking</h2>
+                <p class="text-gray-500 text-center mb-4">Securely manage your personal and business accounts.</p>
+                <button class="w-full py-3 text-white font-semibold rounded-lg app-button shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-td-green focus:ring-offset-2">
+                    Access Online Banking
+                </button>
+            </div>
+
+            <!-- App Card 2: Investing -->
+            <div class="flex flex-col items-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-td-green mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 20l-6-6-6 6"></path>
+                    <path d="M12 14v-8"></path>
+                    <path d="M6 10h12"></path>
+                    <path d="M12 10l-6-6-6 6"></path>
+                    <path d="M18 10l-6-6-6 6"></path>
+                </svg>
+                <h2 class="text-xl font-semibold mb-2 text-gray-700">TD Investing</h2>
+                <p class="text-gray-500 text-center mb-4">Trade stocks and manage your investment portfolio.</p>
+                <button class="w-full py-3 text-white font-semibold rounded-lg app-button shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-td-green focus:ring-offset-2">
+                    Start Investing
+                </button>
+            </div>
+
+            <!-- App Card 3: Credit Cards -->
+            <div class="flex flex-col items-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-td-green mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <path d="M12 10l-6 6h12l-6-6z"></path>
+                    <path d="M7 10h10"></path>
+                    <path d="M7 14h10"></path>
+                </svg>
+                <h2 class="text-xl font-semibold mb-2 text-gray-700">Credit Card Services</h2>
+                <p class="text-gray-500 text-center mb-4">View statements and manage your credit card accounts.</p>
+                <button class="w-full py-3 text-white font-semibold rounded-lg app-button shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-td-green focus:ring-offset-2">
+                    Manage My Cards
+                </button>
+            </div>
+
+            <!-- App Card 4: Insurance -->
+            <div class="flex flex-col items-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-td-green mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7v10l10 5 10-5V7L12 2z"></path>
+                    <path d="M12 7l-8 4v8"></path>
+                    <path d="M12 7l8 4v8"></path>
+                    <path d="M12 21V12"></path>
+                </svg>
+                <h2 class="text-xl font-semibold mb-2 text-gray-700">TD Insurance</h2>
+                <p class="text-gray-500 text-center mb-4">Explore and manage your home, auto, and travel insurance.</p>
+                <button class="w-full py-3 text-white font-semibold rounded-lg app-button shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-td-green focus:ring-offset-2">
+                    Get a Quote
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
