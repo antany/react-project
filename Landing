@@ -42,6 +42,190 @@
             color: #6b7280;
         }
 
+        /* Flexbox layout for centering app cards */
+        .app-flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem; /* Space between cards */
+        }
+
+        /* App card styling */
+        .app-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem;
+            background-color: #f9fafb;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease-in-out;
+            width: 100%; /* Default width for small screens */
+            max-width: 24rem; /* Max width to maintain layout consistency */
+        }
+        .app-card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .app-icon {
+            height: 4rem;
+            width: 4rem;
+            color: #00824b; /* TD Bank green */
+            margin-bottom: 1rem;
+        }
+        .app-card h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        .app-card p {
+            color: #6b7280;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .app-button {
+            width: 100%;
+            padding: 0.75rem;
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            background-image: radial-gradient(circle at 100% 100%, #157945, #00824b); /* TD green gradient */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .app-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 130, 75, 0.4);
+        }
+
+        /* Media query for larger screens */
+        @media (min-width: 768px) {
+            .app-card {
+                max-width: calc(50% - 0.75rem); /* Adjust width to fit two cards per row with gap */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main container with a card-like material design -->
+    <div class="card">
+
+        <!-- Header section -->
+        <header class="header">
+            <h1>Welcome to the TD App Portal</h1>
+            <p>Select an application below to continue to login.</p>
+        </header>
+
+        <!-- Main content area using flexbox for centering odd numbers of items -->
+        <div class="app-flex-container">
+
+            <!-- App Card 1: Online Banking -->
+            <div class="app-card">
+                <svg xmlns="http://www.w3.org/2000/svg" class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                    <path d="M12 21v-14"></path>
+                    <path d="M7 16h10"></path>
+                    <path d="M7 12h10"></path>
+                    <path d="M7 8h10"></path>
+                </svg>
+                <h2>Online Banking</h2>
+                <p>Securely manage your personal and business accounts.</p>
+                <button class="app-button">Access Online Banking</button>
+            </div>
+
+            <!-- App Card 2: Investing -->
+            <div class="app-card">
+                <svg xmlns="http://www.w3.org/2000/svg" class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 20l-6-6-6 6"></path>
+                    <path d="M12 14v-8"></path>
+                    <path d="M6 10h12"></path>
+                    <path d="M12 10l-6-6-6 6"></path>
+                    <path d="M18 10l-6-6-6 6"></path>
+                </svg>
+                <h2>TD Investing</h2>
+                <p>Trade stocks and manage your investment portfolio.</p>
+                <button class="app-button">Start Investing</button>
+            </div>
+
+            <!-- App Card 3: Credit Cards -->
+            <div class="app-card">
+                <svg xmlns="http://www.w3.org/2000/svg" class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <path d="M12 10l-6 6h12l-6-6z"></path>
+                    <path d="M7 10h10"></path>
+                    <path d="M7 14h10"></path>
+                </svg>
+                <h2>Credit Card Services</h2>
+                <p>View statements and manage your credit card accounts.</p>
+                <button class="app-button">Manage My Cards</button>
+            </div>
+
+            <!-- This is an example of an additional card to demonstrate the centering effect with an even number. You can add or remove cards to see the effect. -->
+            <div class="app-card">
+                <svg xmlns="http://www.w3.org/2000/svg" class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7v10l10 5 10-5V7L12 2z"></path>
+                    <path d="M12 7l-8 4v8"></path>
+                    <path d="M12 7l8 4v8"></path>
+                    <path d="M12 21V12"></path>
+                </svg>
+                <h2>TD Insurance</h2>
+                <p>Explore and manage your home, auto, and travel insurance.</p>
+                <button class="app-button">Get a Quote</button>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TD App Portal</title>
+    <style>
+        /* Base styles for the page and layout */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f3f4f6; /* A light gray background */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        /* Styles for the main card container */
+        .card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 56rem;
+            padding: 3rem;
+        }
+
+        /* Header styling */
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            font-size: 1.125rem;
+            color: #6b7280;
+        }
+
         /* App grid layout */
         .app-grid {
             display: grid;
